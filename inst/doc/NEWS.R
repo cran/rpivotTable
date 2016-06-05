@@ -1,3 +1,6 @@
-## ----setup, include=FALSE------------------------------------------------
-knitr::opts_chunk$set(echo = TRUE)
+## ---- echo=FALSE---------------------------------------------------------
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE
+  )
 

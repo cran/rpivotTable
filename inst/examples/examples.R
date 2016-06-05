@@ -34,7 +34,7 @@ rpivotTable(
   , cols = "Survived"
   , aggregatorName = "Sum as Fraction of Rows"
   , vals = "Freq"
-  , rendererName = "Heatmap"
+
 )
 
 # just another neat example
@@ -92,3 +92,8 @@ rpivotTable(
   , aggregatorName = "Count"
   , rendererName = "Treemap"
 )
+
+
+# change locale for non English use
+ptbl <- rpivotTable(mtcars)
+change_locale(ptbl, "pt")
