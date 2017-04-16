@@ -1,15 +1,12 @@
----
-output: html_document
----
 ### rpivotTable:  pivottable for R
 
-The rpivotTable package is an R [htmlwidget](http://htmlwidgets.org)  built around the [pivottable](http://nicolas.kruchten.com/pivottable/examples/)  library.
+The rpivotTable package is an R [htmlwidget](http://htmlwidgets.org)  visualization library built around the Javascript [pivottable](http://nicolas.kruchten.com/pivottable/examples/)  library.
 
-PivotTable.js is a Javascript Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI and  written in CoffeeScript by Nicolas Kruchten at Datacratic. It is available under an MIT license
+PivotTable.js is a Javascript Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI and  written in CoffeeScript  (then compiled to JavaScript) by Nicolas Kruchten at Datacratic. It is available under an MIT license
 
 #### Installation
 
-The rpivotTable package depends on the development version of the [htmlwidgets](https://github.com/ramnathv/htmlwidgets) package so you need to install both packages. You can do this using the **devtools** package as follows:
+The rpivotTable package depends on  [htmlwidgets](https://github.com/ramnathv/htmlwidgets) package so you need to install both packages. You can do this using the **devtools** package as follows:
 
 ```R
 devtools::install_github(c("ramnathv/htmlwidgets", "smartinsightsfromdata/rpivotTable"))
@@ -17,6 +14,11 @@ devtools::install_github(c("ramnathv/htmlwidgets", "smartinsightsfromdata/rpivot
 
 #### Usage
 
+Call the package with
+
+```R
+library(rpivotTable)  # No need to explicitly load htmlwidgets: this is done automatically
+```
 Just plug in your `data.frame` or `data.table` (e.g. dt) to `rpivotTable()`.
 
 It is as simple as this:
@@ -52,7 +54,7 @@ If you want to include it as part of your `dplyr` / `magrittr` pipeline, you can
 ```R
 library(dplyr)
 iris %>%
-tbl_df %>%
-filter( Sepal.Width > 3 ) %>%
-rpivotTable
+  tbl_df() %>%
+  filter( Sepal.Width > 3 ) %>%
+  rpivotTable()
 ```

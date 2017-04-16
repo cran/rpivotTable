@@ -1,5 +1,4 @@
 library(rpivotTable)
-library(knitr)
 
 rpivotTable(
   Titanic,
@@ -11,4 +10,3 @@ rpivotTable(
   vals = "Freq",
   rendererName = "Table Barchart"
 )
-# htmlwidgets::saveWidget(a, file="titanic.html")

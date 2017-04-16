@@ -19,7 +19,6 @@ cnames <- list("cols","rows","vals", "exclusions","inclusions", "aggregatorName"
 # Apply a function to all keys, to get corresponding values
 allvalues <- lapply(cnames, function(name) {
   item <- input$myPivotData[[name]]
-  print(item)
   if (is.list(item)) {
     list_to_string(item, name)
   } else {
